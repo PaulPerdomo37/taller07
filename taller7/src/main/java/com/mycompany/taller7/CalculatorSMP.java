@@ -19,6 +19,8 @@ public class CalculatorSMP {
         System.out.println(question);
         String ret = Operations.Solve(question);
         System.out.println(ret);
+        
+        
     }
     
 }
