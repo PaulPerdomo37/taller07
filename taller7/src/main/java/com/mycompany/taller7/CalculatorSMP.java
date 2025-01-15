@@ -4,6 +4,8 @@
  */
 package com.mycompany.taller7;
 
+import java.rmi.server.Operation;
+
 /**
  *
  * @author CltControl

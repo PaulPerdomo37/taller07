@@ -4,13 +4,17 @@
  */
 package com.mycompany.taller7;
 
+
 import java.util.regex.Pattern;
 import org.junit.jupiter.api.AfterEach;
+
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
@@ -38,9 +42,22 @@ public class OperationsTest {
         System.out.println("Test case completed.");
     }
 
+    @Test
+    void testMakeFormulaLongitud() {
+    String formula = Operations.MakeFormula();
+    assertTrue(formula.length()<=11);
+    //la formula siempre tiene 11 caracteres
+    }
+
+    @Test
+    void  testSolveNull(){
+        assertThrows(IllegalArgumentException.class, () -> Operations.Solve(null));
+    }
+
     /**
      * Test of MakeFormula method, ensuring formula format validity.
      */
+
     @Test
     public void testMakeFormula() {
         System.out.println("MakeFormula");
@@ -83,9 +100,11 @@ public class OperationsTest {
         assertEquals("8/2=4", Operations.Solve("8/2"));
     }
 
+
     /**
      * Test for division by zero, ensuring appropriate exception handling.
      */
+
     @Test
     public void testDivisionByZero() {
         System.out.println("Probar que de error dividido para 0");
@@ -97,6 +116,7 @@ public class OperationsTest {
     String formula = Operations.MakeFormula();
     String result = Operations.Solve(formula);
     assertTrue(result.contains("="), "la solucción deberia contener = : " + result);
+
     
     // Verificar que el resultado evaluado sea un número válido después del '='
     String[] parts = result.split("=");
