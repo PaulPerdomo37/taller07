@@ -6,13 +6,8 @@ package com.mycompany.taller7;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-<<<<<<< HEAD
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-=======
->>>>>>> 755238ddefcdbae9ff3b4ce7b2eac8302f9edb53
 
 /**
  *
