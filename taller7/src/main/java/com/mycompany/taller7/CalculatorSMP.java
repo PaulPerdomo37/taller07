@@ -4,6 +4,8 @@
  */
 package com.mycompany.taller7;
 
+import java.rmi.server.Operation;
+
 /**
  *
  * @author CltControl
@@ -19,6 +21,7 @@ public class CalculatorSMP {
         System.out.println(question);
         String ret = Operations.Solve(question);
         System.out.println(ret);
+        System.out.println(Operations.Solve(null));
     }
     
 }
