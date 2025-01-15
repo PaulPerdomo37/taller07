@@ -6,6 +6,7 @@ package com.mycompany.taller7;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -41,6 +42,11 @@ public class OperationsTest {
     String formula = Operations.MakeFormula();
     assertTrue(formula.length()<=11);
     //la formula siempre tiene 11 caracteres
+    }
+
+    @Test
+    void  testSolveNull(){
+        assertThrows(IllegalArgumentException.class, () -> Operations.Solve(null));
     }
 
     /**
